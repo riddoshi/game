@@ -1,9 +1,5 @@
 import pygame as pg
 from settings import *
-import random
-from pygame import Vector2
-
-
 
 class Player(pg.sprite.Sprite):
     def __init__(self, game, x, y):
@@ -11,7 +7,7 @@ class Player(pg.sprite.Sprite):
         pg.sprite.Sprite.__init__(self, self.groups)
         self.game = game
         self.image = pg.Surface((TILESIZE, TILESIZE))
-        self.image = pg.fill(YELLOW)
+        self.image.fill(YELLOW)
         self.rect = self.image.get_rect()
         self.vx, self.vy = 0, 0
         self.x = x * TILESIZE
@@ -60,8 +56,6 @@ class Player(pg.sprite.Sprite):
         self.collide_with_walls('x')
         self.rect.y = self.y
         self.collide_with_walls('y')
-
-
 
 class Wall(pg.sprite.Sprite):
     def __init__(self, game, x, y):

@@ -28,7 +28,6 @@ class Game:
                 if tile == 'P':
                     self.player = Player(self, col, row)
         self.camera = Camera(self.map.width, self.map.height)
-        all_sprites.draw(screen)
 
     def run(self):
         # game loop - set self.playing = False to end the game
