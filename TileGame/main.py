@@ -9,6 +9,8 @@ class Game:
     def __init__(self):
         pg.init()
         self.screen = pg.display.set_mode((WIDTH, HEIGHT))
+        global SPRITE_SHEET
+        SPRITE_SHEET = pg.image.load("img/ipLRR.png").convert_alpha()
         pg.display.set_caption(TITLE)
         self.clock = pg.time.Clock()
         self.load_data()
